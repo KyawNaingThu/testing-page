@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+// Redirect /policy to the policy.html file
+app.get('/policy', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'policy.html'));
+});
+
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
     // Your verify token. Should be a random string.
