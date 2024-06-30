@@ -13,11 +13,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
+    console.log('Hello World page');
 });
 
 // Redirect /policy to the policy.html file
 app.get('/policy', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'policy.html'));
+    console.log('polcy page');
 });
 
 // Adds support for GET requests to our webhook
